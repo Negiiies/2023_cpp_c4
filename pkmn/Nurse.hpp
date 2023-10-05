@@ -3,15 +3,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Pikachu.hpp"
 #include "Charmander.hpp"
+#include "IPokemon.hpp"
+#include "Pikachu.hpp"
 
 namespace pkmn {
 class Nurse {
 public:
-  const std::string name() const;
-  void heal(Pikachu &pikachu) const;
+    const std::string name() const;
+    void              heal(IPokemon &charm) const;
 };
-}
+} // namespace pkmn
 
 #endif /* NURSE_HPP_ */

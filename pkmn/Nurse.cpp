@@ -1,21 +1,24 @@
 #include "Nurse.hpp"
-#include "Pikachu.hpp"
 #include "Charmander.hpp"
+#include "IPokemon.hpp"
+#include "Pikachu.hpp"
 
-const std::string pkmn::Nurse::name() const {
-  std::string name_n = "Joy";
-  return name_n;
+const std::string pkmn::Nurse::name() const
+{
+    std::string name_n = "Joy";
+    return name_n;
 }
 
-void pkmn::Nurse::heal(pkmn::Pikachu &pikachu) const {
-  if (pikachu.health() <= 50) {
-    std::cout << "There there" << pikachu.name()
-              << ", you should feel way better now!" << std::endl;
-  } else if (pikachu.health() > 50 && pikachu.health() < 100) {
-    std::cout << "That should do it," << pikachu.name() << std::endl;
-  } else {
-    std::cout << "You already are in tip-top shape, " << pikachu.name()
-              << std::endl;
-  }
-  pikachu.health() = 100;
+void pkmn::Nurse::heal(pkmn::IPokemon &charm) const
+{
+    if (charm.health() <= 50) {
+        std::cout << "There there" << charm.name()
+                  << ", you should feel way better now !" << std::endl;
+    } else if (charm.health() > 50 && charm.health() < 100) {
+        std::cout << "That should do it, " << charm.name() << "!" << std::endl;
+    } else {
+        std::cout << "You already are in tip-top shape, " << charm.name() << "!"
+                  << std::endl;
+    }
+    charm.health() = 100;
 }
